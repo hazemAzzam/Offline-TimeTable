@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head><meta charset='UTF-8' /><meta name='viewport' content='width = device - width, initial - scale = 1' /> 
+	<style id='webmakerstyle'>:root { --first: #212121; --second: #323232; --third: #0D7377; --font-color: #14FFEC; } #body { text-align: center; background-color: var(--first); font-size: 20px; font-family: sans-serif; } table { left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: var(--first); border-collapse: collapse; color: var(--font-color); table-layout: auto; position: absolute; width: 100%; } th { background-color: var(--second); padding: 20px; } td { font-size: 20px; padding: 7px; height: 50px; }</style>
+	</head>
+	<body id='body'>
+		<table id='table'>
+			<caption id='cb'>1st year</caption>
+			<tr>
+					<th>DAY</th>
+					<th>CODE</th>
+					<th>START</th>
+					<th>FINISH</th>
+				</tr>
+				<tr id='008:00' class='0'>
+					<th rowspan=3>SUN</th>
+					<td class='008:00 font 10'>MATH101</td>
+					<td class='008:00 font 10'>08:00 AM</td>
+					<td class='008:00 font 10'>10:00 AM</td>
+				</tr>
+				<tr id='010:00' class='0'>
+					<td class='010:00 font 10'>CHECM 150</td>
+					<td class='010:00 font 10'>10:00 AM</td>
+					<td class='010:00 font 10'>12:00 AM</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='013:00' class='0'>
+					<td class='013:00 font 10'>CHECM 150</td>
+					<td class='013:00 font 10'>01:00 PM</td>
+					<td class='013:00 font 10'>03:00 PM</td>
+				</tr>
+				<tr id='108:00' class='1'>
+					<th rowspan=2>MON</th>
+					<td class='108:00 font 11'>CHEM 101</td>
+					<td class='108:00 font 11'>08:00 AM</td>
+					<td class='108:00 font 11'>10:00 AM</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='111:00' class='1'>
+					<td class='111:00 font 11'>CHEM 101</td>
+					<td class='111:00 font 11'>11:00 AM</td>
+					<td class='111:00 font 11'>01:00 PM</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='208:00' class='2'>
+					<th rowspan=1>TUE</th>
+					<td class='208:00 font 12'>CHEM 101</td>
+					<td class='208:00 font 12'>08:00 AM</td>
+					<td class='208:00 font 12'>01:00 PM</td>
+				</tr>
+		</table>
+	</body>
+</html>
+<script>
+setInterval(myTimer, 1000);var second = '#14FFEC';var third = '#0D7377'; var fourth = '#14FFEC'; var first = '#212121'; var d = new Date(); tday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'); var t = d.toLocaleTimeString(); var day = d.getDay(); var hours = d.getHours() + d.getMinutes() / 100; function daySelector() { var galleries = document.getElementsByClassName(day); var len = galleries.length; for (var i = 0; i < len; i++) { galleries[i].style.backgroundColor = third; } var it = 0; while (document.getElementsByClassName(day + 10)[it]) document.getElementsByClassName(day + 10)[it++].style.color = second; }
+function myTimer() {
+	var sDate = new Date();
+	if (day == 0) {
+		daySelector();
+		if (hours >= 7.400000 && hours < 9.400000) {
+			document.getElementById('008:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("008:00 font")[i].style.color = first;
+		}
+		if (hours >= 9.400000 && hours < 11.400000) {
+			document.getElementById('010:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("010:00 font")[i].style.color = first;
+		}
+		if (hours >= 12.400000 && hours < 14.400000) {
+			document.getElementById('013:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("013:00 font")[i].style.color = first;
+		}
+	}
+	if (day == 1) {
+		daySelector();
+		if (hours >= 7.400000 && hours < 9.400000) {
+			document.getElementById('108:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("108:00 font")[i].style.color = first;
+		}
+		if (hours >= 9.400000 && hours < 11.400000) {
+			document.getElementById('110:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("110:00 font")[i].style.color = first;
+		}
+	}
+	if (day == 2) {
+		daySelector();
+		if (hours >= 7.400000 && hours < 9.400000) {
+			document.getElementById('208:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 3; i++)
+				document.getElementsByClassName("208:00 font")[i].style.color = first;
+		}
+	}
+}
+</script>
