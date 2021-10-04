@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Offline-TimeTable Maker", "Offline-TimeTable Maker\Offline-TimeTable Maker.vcxproj", "{95DE656E-631C-48EE-A959-13506E96187F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95DE656E-631C-48EE-A959-13506E96187F}.Debug|x64.ActiveCfg = Debug|x64
+		{95DE656E-631C-48EE-A959-13506E96187F}.Debug|x64.Build.0 = Debug|x64
+		{95DE656E-631C-48EE-A959-13506E96187F}.Debug|x86.ActiveCfg = Debug|Win32
+		{95DE656E-631C-48EE-A959-13506E96187F}.Debug|x86.Build.0 = Debug|Win32
+		{95DE656E-631C-48EE-A959-13506E96187F}.Release|x64.ActiveCfg = Release|x64
+		{95DE656E-631C-48EE-A959-13506E96187F}.Release|x64.Build.0 = Release|x64
+		{95DE656E-631C-48EE-A959-13506E96187F}.Release|x86.ActiveCfg = Release|Win32
+		{95DE656E-631C-48EE-A959-13506E96187F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49FB0363-9F89-4825-8146-0B7D0EC16D6D}
+	EndGlobalSection
+EndGlobal

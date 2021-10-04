@@ -1,0 +1,6 @@
+DAY|CODE|LECTURE|START|FINISH|PLACE
+SAT|COMP 307|Operating System|12:00|15:00|Hall - 6
+SUN|MATH 101|Mathematical Analsis|11:00|14:00|Class - 9
+SUN|-|E Mathematics|14:00|16:00|Class - 9
+SUN|COMP 207|Database System|16:00|20:00|Hammad's Hall
+TUE|MATH 203|Linear Algebra|08:00|11:00|Class - 9
