@@ -154,9 +154,9 @@ void File::generate()
 		"setInterval(myTimer, 1000);var second = '" + Color::fourth + "';var third = '" + Color::third + "'; var fourth = '" + Color::fourth + "'; var first = '" + Color::first + "'; var d = new Date(); tday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'); var t = d.toLocaleTimeString(); var day = d.getDay(); var hours = d.getHours() + d.getMinutes() / 100; function daySelector() { var galleries = document.getElementsByClassName(day); var len = galleries.length; for (var i = 0; i < len; i++) { galleries[i].style.backgroundColor = third; } var it = 0; while (document.getElementsByClassName(day + 10)[it]) document.getElementsByClassName(day + 10)[it++].style.color = second; }"
 		"\nfunction myTimer() {\n"
 		"	var sDate = new Date();\n";
+	int ROW = 1;
 	for (int i = 0; i < 7; i++)
 	{
-		int row = 1;
 		int numberOfLectures = getOccOfWord(day[i].name);
 		if (numberOfLectures > 0)
 		{
@@ -168,17 +168,17 @@ void File::generate()
 				int startPos = locateStartTime();
 				int finishPos = locateFinishTime();
 
-				float start = changeTime(changeToProperTime(data[row][startPos]));
+				float start = changeTime(changeToProperTime(data[ROW][startPos]));
 
-				float finish = changeTime(changeToProperTime(data[row][finishPos]));
+				float finish = changeTime(changeToProperTime(data[ROW][finishPos]));
 
 				htmlFile <<
 					"		if (hours >= " + to_string(start) + " && hours < " + to_string(finish) + ") {\n"
-					"			document.getElementById(\'" + day[i].code + data[row][startPos] + "\').style.backgroundColor = fourth;\n"
+					"			document.getElementById(\'" + day[i].code + data[ROW][startPos] + "\').style.backgroundColor = fourth;\n"
 					"			for (var i = 0; i < "+to_string(numberOfCols-1)+"; i++)\n"
-					"				document.getElementsByClassName(\"" + day[i].code + data[row][startPos] + " font\")[i].style.color = first;\n"
+					"				document.getElementsByClassName(\"" + day[i].code + data[ROW][startPos] + " font\")[i].style.color = first;\n"
 					"		}\n";
-				row++;
+				ROW++;
 			}
 			htmlFile <<
 				"	}\n";
