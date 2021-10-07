@@ -44,13 +44,50 @@
 					<td class='016:00 font 10'>20:00</td>
 					<td class='016:00 font 10'>Hammad's Hall</td>
 				</tr>
-				<tr style='border-bottom: 1px solid #323232;' id='208:00' class='2'>
-					<th rowspan=1>TUE</th>
+				<tr id='208:00' class='2'>
+					<th rowspan=3>TUE</th>
 					<td class='208:00 font 12'>MATH 203</td>
 					<td class='208:00 font 12'>Linear Algebra</td>
 					<td class='208:00 font 12'>08:00</td>
 					<td class='208:00 font 12'>11:00</td>
 					<td class='208:00 font 12'>Class - 9</td>
+				</tr>
+				<tr id='211:00' class='2'>
+					<td class='211:00 font 12'>-</td>
+					<td class='211:00 font 12'>E Mathematics</td>
+					<td class='211:00 font 12'>11:00</td>
+					<td class='211:00 font 12'>12:00</td>
+					<td class='211:00 font 12'>Class - 9</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='214:00' class='2'>
+					<td class='214:00 font 12'>ENGL 201</td>
+					<td class='214:00 font 12'>English</td>
+					<td class='214:00 font 12'>14:00</td>
+					<td class='214:00 font 12'>16:00</td>
+					<td class='214:00 font 12'>Noah's Hall</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='311:00' class='3'>
+					<th rowspan=1>WED</th>
+					<td class='311:00 font 13'>COMP 201</td>
+					<td class='311:00 font 13'>Algorithms Design and Analysis</td>
+					<td class='311:00 font 13'>11:00</td>
+					<td class='311:00 font 13'>14:00</td>
+					<td class='311:00 font 13'>Class - 6</td>
+				</tr>
+				<tr id='411:00' class='4'>
+					<th rowspan=2>THU</th>
+					<td class='411:00 font 14'>MATH 205</td>
+					<td class='411:00 font 14'>Number Theory</td>
+					<td class='411:00 font 14'>11:00</td>
+					<td class='411:00 font 14'>14:00</td>
+					<td class='411:00 font 14'>Class-9</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #323232;' id='414:00' class='4'>
+					<td class='414:00 font 14'>-</td>
+					<td class='414:00 font 14'>Computer Science</td>
+					<td class='414:00 font 14'>14:00</td>
+					<td class='414:00 font 14'>16:00</td>
+					<td class='414:00 font 14'>Section</td>
 				</tr>
 		</table>
 	</body>
@@ -91,6 +128,37 @@ function myTimer() {
 			document.getElementById('212:00').style.backgroundColor = fourth;
 			for (var i = 0; i < 5; i++)
 				document.getElementsByClassName("212:00 font")[i].style.color = first;
+		}
+		if (hours >= 10.400000 && hours < 13.400000) {
+			document.getElementById('211:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 5; i++)
+				document.getElementsByClassName("211:00 font")[i].style.color = first;
+		}
+		if (hours >= 13.400000 && hours < 15.400000) {
+			document.getElementById('214:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 5; i++)
+				document.getElementsByClassName("214:00 font")[i].style.color = first;
+		}
+	}
+	if (day == 3) {
+		daySelector();
+		if (hours >= 11.400000 && hours < 14.400000) {
+			document.getElementById('312:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 5; i++)
+				document.getElementsByClassName("312:00 font")[i].style.color = first;
+		}
+	}
+	if (day == 4) {
+		daySelector();
+		if (hours >= 11.400000 && hours < 14.400000) {
+			document.getElementById('412:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 5; i++)
+				document.getElementsByClassName("412:00 font")[i].style.color = first;
+		}
+		if (hours >= 10.400000 && hours < 13.400000) {
+			document.getElementById('411:00').style.backgroundColor = fourth;
+			for (var i = 0; i < 5; i++)
+				document.getElementsByClassName("411:00 font")[i].style.color = first;
 		}
 	}
 }

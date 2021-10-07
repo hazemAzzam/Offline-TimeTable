@@ -4,3 +4,8 @@ SUN|MATH 101|Mathematical Analsis|11:00|14:00|Class - 9
 SUN|-|E Mathematics|14:00|16:00|Class - 9
 SUN|COMP 207|Database System|16:00|20:00|Hammad's Hall
 TUE|MATH 203|Linear Algebra|08:00|11:00|Class - 9
+TUE|-|E Mathematics|11:00|12:00|Class - 9
+TUE|ENGL 201|English|14:00|16:00|Noah's Hall
+WED|COMP 201|Algorithms Design and Analysis|11:00|14:00|Class - 6
+THU|MATH 205|Number Theory|11:00|14:00|Class-9
+THU|-|Computer Science|14:00|16:00|Section
