@@ -1,0 +1,12 @@
+DAY|CODE|LECTURE|START|FINISH|PLACE
+SAT|MATH 303|Numerical Analysis|08:00|10:00|Class 325B
+SAT|MATH 305|Differential Geometry|10:00|12:00|Class 325B
+SAT|-|S-Mathematics|12:00|13:00|Class 228A
+SAT|COMP 309|Multimedia Systems|13:00|14:00|LAP
+SUN|COMP 305|Complexity Theory|16:00|19:00|HEGAZY
+MON|COMP 313|Software Packages|08:00|11:00|LAP
+TUE|MATH 301|Abstract Algebra|08:00|11:00|Hall 2
+TUE|COMP 307|Operating Systems|11:00|14:00|Hall 104
+TUE|SCTH 301|Scientific Thinking|15:00|16:00|Hammad
+THU|MATH 303|Numerical Analysis|11:00|12:00|Class 228A
+TUE|-|S-Mathematics|12:00|13:00|Hall 5
