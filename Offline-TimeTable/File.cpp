@@ -121,10 +121,10 @@ void File::generate()
 				int start = locateStartTime();
 				int finish = locateFinishTime();
 				if (j == numberOfLectures + row - 1) {
-					htmlFile << "				<tr style='border-bottom: 1px solid #323232;' id=\'" + day[i].code + data[j][start] + "\' class=\'" + day[i].code + "\'>\n";
+					htmlFile << "				<tr style='border-bottom: 1px solid #323232;' class=\'" + day[i].code + data[j][start] + "\' class=\'" + day[i].code + "\'>\n";
 				}
 				else
-					htmlFile << "				<tr id=\'" + day[i].code + data[j][start] + "\' class=\'" + day[i].code + "\'>\n";
+					htmlFile << "				<tr class=\'" + day[i].code + data[j][start] + "\' class=\'" + day[i].code + "\'>\n";
 				if (j == row) {
 					htmlFile <<
 						"					<th rowspan=" + to_string(numberOfLectures) + ">" + data[j][0] + "</th>\n";
@@ -151,7 +151,7 @@ void File::generate()
 		"</html>\n";
 	htmlFile <<
 		"<script>\n"
-		"setInterval(myTimer, 1000);var second = '" + Color::fourth + "';var third = '" + Color::third + "'; var fourth = '" + Color::fourth + "'; var first = '" + Color::first + "'; var d = new Date(); tday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'); var t = d.toLocaleTimeString(); var day = d.getDay(); var hours = d.getHours() + d.getMinutes() / 100; function daySelector() { var galleries = document.getElementsByClassName(day); var len = galleries.length; for (var i = 0; i < len; i++) { galleries[i].style.backgroundColor = third; } var it = 0; while (document.getElementsByClassName(day + 10)[it]) document.getElementsByClassName(day + 10)[it++].style.color = second; }"
+		"setInterval(myTimer, 1000);var second = '" + Color::fourth + "';var third = '" + Color::third + "'; var fourth = '" + Color::fourth + "'; var first = '" + Color::first + "'; var d = new Date(); tday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'); var t = d.toLocaleTimeString(); var day = d.getDay(); var hours = d.getHours() + d.getMinutes() / 100; function daySelector() { var galleries = document.getElementsByClassName(day + 10); var len = galleries.length; for (var i = 0; i < len; i++) { galleries[i].style.backgroundColor = third; } var it = 0; while (document.getElementsByClassName(day + 10)[it]) document.getElementsByClassName(day + 10)[it++].style.color = second; }"
 		"\nfunction myTimer() {\n"
 		"	var sDate = new Date();\n";
 	int ROW = 1;
@@ -174,8 +174,11 @@ void File::generate()
 
 				htmlFile <<
 					"		if (hours >= " + to_string(start) + " && hours < " + to_string(finish) + ") {\n"
-					"			document.getElementById(\'" + day[i].code + data[ROW][startPos] + "\').style.backgroundColor = fourth;\n"
-					"			for (var i = 0; i < "+to_string(numberOfCols-1)+"; i++)\n"
+					"			var ij = 0;\n"	
+					"			while(document.getElementsByClassName(\'" + day[i].code + data[ROW][startPos] + "\')[ij]){\n"
+					"				document.getElementsByClassName(\'" + day[i].code + data[ROW][startPos] + "\')[ij++].style.backgroundColor = fourth;\n"
+					"			}"
+					"			for (var i = 0; i < "+to_string((numberOfCols-1) * numberOfLectures)+"; i++)\n"
 					"				document.getElementsByClassName(\"" + day[i].code + data[ROW][startPos] + " font\")[i].style.color = first;\n"
 					"		}\n";
 				ROW++;
