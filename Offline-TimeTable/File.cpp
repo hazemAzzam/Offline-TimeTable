@@ -145,7 +145,7 @@ void File::generate()
 		}
 	}
 
-	htmlFile <<
+	htmlFile << 
 		"		</table>\n"
 		"	</body>\n"
 		"</html>\n";
