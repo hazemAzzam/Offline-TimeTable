@@ -31,6 +31,7 @@ vector<vector<string>> File::getData()
 	string line = "";
 	linesData();
 	vector<vector<string>> data(numberOfRows, vector<string>(numberOfCols, ""));
+
 	for (int i = 0; i < numberOfRows; i++) {
 		col = 0;
 		getline(file, line, '\n');
@@ -39,7 +40,11 @@ vector<vector<string>> File::getData()
 				col++;
 				continue;
 			}
-			data[i][col] += line[j];
+			if (col > numberOfCols-1) {
+				cout << "Error. in row " << i << endl;
+			}
+			else if (line[j] != ' ')
+				data[i][col] += line[j];
 		}
 	}
 
@@ -51,10 +56,12 @@ void File::linesData()
 	ifstream myfile(path);
 	int rows = 0;
 	if (myfile.is_open()) {
-		while (!myfile.eof()) {
-			getline(myfile, line);
-			numberOfCols = count(line.begin(), line.end(), '|') + 1;
+		getline(myfile, line);
+		numberOfCols = count(line.begin(), line.end(), '|') + 1;
+		while (!myfile.eof() && line.length()) {
+			//cout << "---> " << numberOfCols << endl;
 			rows++;
+			getline(myfile, line);
 		}
 		myfile.close();
 	}
