@@ -1,8 +1,0 @@
-DAY|CODE|LECTURE|GROUP|START|FINISH|PLACE
-SAT|CHEM 315|Organic Chemistry - LAP|1, 2|08:00|11:00|Section
-SAT|CHEM 343|Physical Chemistry - LAP|2(A)|11:00|14:00|Section
-SAT|CHEM 333|Analytical Chemistry - LAP|-|11:00|14:00|Section
-SAT|CHEM 315|Organic Chemistry - LAP|3|14:00|17:00|Section
-SAT|CHEM 343|Physical Chemistry - LAP|2(B)|14:00|17:00|Section
-SUN|CHEM 311|Heterocyclic Compounds|-|08:00|10:00|Hammad
-SUN|CHEM 317 - E|Organic Chemistry (Metallic Organochemistry, Stereochemistry)|-|10:00|12:00|Hammad
