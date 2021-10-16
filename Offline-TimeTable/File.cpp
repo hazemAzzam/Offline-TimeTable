@@ -16,8 +16,11 @@ void File::mainpulator()
 {
 	string p = "";
 	for (int i = 0; i < path.length(); i++) {
+		
 		if (path[i] == '\\')
 			p += '\\';
+
+		
 		p += path[i];
 	}
 	path = p;
