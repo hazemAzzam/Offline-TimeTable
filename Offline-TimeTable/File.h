@@ -12,6 +12,8 @@ protected:
 	int numberOfRows;
 	int numberOfCols;
 	void mainpulator();
+
+
 public:
 	File();
 	vector<vector<string>> getData();

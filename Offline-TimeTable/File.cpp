@@ -1,4 +1,4 @@
-#include "File.h"
+﻿#include "File.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -89,9 +89,9 @@ void File::generate()
 	vector<vector<string>> data = getData();
 	struct Day
 	{
+
 		string name;
 		string code;
-
 	};
 	Day day[7] = {
 		{"SAT", "6"},
@@ -153,6 +153,15 @@ void File::generate()
 			}
 			row = j;
 		}
+		/*else {
+			htmlFile << "				<tr style='border-bottom: 1px solid " + Color::second + ";' class=\'" + day[i].code + "0" + "\' class=\'" + day[i].code + "\'>\n";
+			htmlFile <<
+				"					<th style='color:" + Color::color7 + "' rowspan=" + to_string(numberOfLectures+1) + ">" + day[i].name + "</th>\n";
+
+			htmlFile <<
+				"					<td colspan= "+to_string(numberOfCols)+" style='color:" + Color::color8 + "' class=\'" + day[i].code + "0" + " font " + to_string(stoi(day[i].code) + 10) + "\'>" + "Day OFF" + "</td>\n";
+			htmlFile << "				</tr>\n";
+		}*/
 	}
 
 	htmlFile << 
@@ -196,6 +205,12 @@ void File::generate()
 			htmlFile <<
 				"	}\n";
 		}
+		/*else {
+			htmlFile <<
+				"if(day == " + day[i].code + "){\n";
+			htmlFile <<
+				"var galleries = document.getElementsByClassName(day + '0'); var len = galleries.length; for (var i = 0; i < len; i++) { galleries[i].style.backgroundColor = third; } var it = 0; while (document.getElementsByClassName(day + '0')[it]) document.getElementsByClassName(day + '0')[it++].style.color = \"" + Color::color5 + "\"\n};\n";
+		}*/
 	}
 	htmlFile <<
 		"}\n</script>";
@@ -245,14 +260,31 @@ float changeToProperTime(string time)
 }
 float changeTime(float t)
 {
-	return t /* - ((float)(40 + 20) / 100)*/;
+	float hours = (int)t;
+	float x = t;
+	float y = ((x - (int)x) * 100);
+	if (y < 20) {
+		int rem = 20 - y;
+		y = 60 - rem;
+		hours--;
+	}
+	else if (y == 60) {
+		y = 0;
+	}
+	else {
+		y -= 20;
+	}
+
+	return hours + y / 100;
 }
 string base12(string time)
 {
 	float hours = changeToProperTime(time);
 	bool isPM = false;
 	if (hours > 12) {
-		hours -= 12;
+		if ((int)hours != 12) {
+			hours -= 12;
+		}
 		isPM = true;
 	}
 	string timeStr = "";
