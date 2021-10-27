@@ -19,3 +19,6 @@ first color will be the background
 second color will be the background of the headers and the font color of the lighted lecture
 third will be the background of the lighted day
 fourth will be the background of the lighted lectures
+
+if the Colors txt is not exist when creating a table, will ask you to input the colors
+so this method will work if you need to change the colors too
