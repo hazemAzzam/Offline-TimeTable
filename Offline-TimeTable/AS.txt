@@ -1,0 +1,14 @@
+DAY|CODE|LECTURE|START|FINISH|PLACE|MidTerm
+SAT|MATH 303|Numerical Analysis|08:00|10:00|Hall B|27/11/2021
+SAT|MATH 305|Differential Geometry|10:00|12:00|Hall B|27/11/2021
+SAT|COMP 309|Multimedia Systems|13:00|14:00|LAB|-
+SAT|MEATING | MEATING |10:00|-|SIMINAR|-
+SUN|COMP 305|Complexity Theory|14:00|16:00|HELAL|21/11/2021
+SUN|COMP 309|Multimedia Systems|16:00|18:00|HELAL|28/11/2021
+MON|MATH 301|Abstract Algebra|09:00|12:00|Class 7|-
+TUE|MATH 301|Abstract Algebra|08:00|11:00|Class 7|-
+TUE|COMP 307|Operating Systems|11:00|14:00|Hall 104|-
+TUE|SCTH 301|Scientific Thinking|15:00|16:00|Hammad|-
+THU|COMP 313|Software Packages|08:00|11:00|LAB|-
+THU|MATH 303|Numerical Analysis|11:00|12:00|Class 228A|-
+THU|-|Section - Numerical Analysis|13:00|14:00|LAB|-

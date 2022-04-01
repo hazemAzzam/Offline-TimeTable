@@ -33,6 +33,7 @@ vector<vector<string>> File::getData()
 	int col = 0;
 	string line = "";
 	linesData();
+	cout << numberOfCols << endl;
 	vector<vector<string>> data(numberOfRows, vector<string>(numberOfCols, ""));
 
 	for (int i = 0; i < numberOfRows; i++) {
@@ -69,6 +70,7 @@ void File::linesData()
 		myfile.close();
 	}
 	numberOfRows = rows;
+	cout << numberOfCols << endl;
 }
 
 int File::getOccOfWord(string word)
@@ -106,14 +108,14 @@ void File::generate()
 	ofstream htmlFile(title+".html");
 	htmlFile << "<!DOCTYPE html>\n<html>\n";
 	htmlFile << "	<head><meta charset='UTF-8' /><meta name='viewport' content='width = device - width, initial - scale = 1' /> \n";
-	htmlFile << "	<style id='webmakerstyle'>:root { --first: " + Color::first + "; --second: " + Color::second + "; --third: " + Color::third + "; --font-color: " + Color::fourth + "; } #body { text-align: center; background-color: var(--first); font-size: 20px; font-family: sans-serif; } table { left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: var(--first); border-collapse: collapse; table-layout: auto; position: absolute; width: 100%; } th { color: " + Color::color6 + ";background-color: var(--second); padding: 20px; } td { font-size: 20px; padding: 7px; height: 50px; }</style>\n";
+	htmlFile << "	<style id='webmakerstyle'>:root { --first: " + Color::first + "; --second: " + Color::second + "; --third: " + Color::third + "; --font-color: " + Color::fourth + "; } #body { text-align: center; background-color: var(--first); font-size: 20px; font-family: sans-serif; } table { left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: var(--first); border-collapse: collapse; table-layout: auto; position: absolute; width: 100%; } th { color: " + Color::color6 + ";background-color: var(--second); padding: 20px; } td { font-size: 20px; padding: 7px; height: 50px; background-color: " + color10 + "}</style>\n";
 	htmlFile << "	</head>\n";
 	htmlFile <<
 		"	<body id='body'>\n"
 		"		<table id='table'>\n"
 		"			<caption style='color:"+Color::color9+"'id='cb'>"  +title+  "</caption>\n"
 		"			<tr>\n";
-	
+	cout << numberOfCols << endl;
 	for (int i = 0; i < numberOfCols; i++)
 	{// put headers
 		htmlFile << "					<th style='color:"+Color::color7+"'>" << data[0][i] << "</th>\n";
@@ -130,6 +132,8 @@ void File::generate()
 			for (; j < numberOfLectures + row && j < numberOfRows; j++) {
 				int start = locateStartTime();
 				int finish = locateFinishTime();
+
+
 				if (j == numberOfLectures + row - 1) {
 					htmlFile << "				<tr style='border-bottom: 1px solid "+Color::second+";' class=\'" + day[i].code + data[j][start] + "\' class=\'" + day[i].code + "\'>\n";
 				}
@@ -174,6 +178,8 @@ void File::generate()
 		"\nfunction myTimer() {\n"
 		"	var sDate = new Date();\n";
 	int ROW = 1;
+	int startPos = locateStartTime();
+	int finishPos = locateFinishTime();
 	for (int i = 0; i < 7; i++)
 	{
 		int numberOfLectures = getOccOfWord(day[i].name);
@@ -182,14 +188,19 @@ void File::generate()
 			htmlFile <<
 				"	if (day == " + day[i].code + ") {\n"
 				"		daySelector();\n";
+
 			for (int j = 0; j < numberOfLectures; j++)
 			{
-				int startPos = locateStartTime();
-				int finishPos = locateFinishTime();
+				cout << data[ROW][finishPos] << endl;
+				if (data[ROW][finishPos].compare("-") == 0 || data[ROW][startPos].compare("-") == 0) {
+					ROW++;
+					continue;
+				}
 
 				float start = changeTime(changeToProperTime(data[ROW][startPos]));
 
 				float finish = changeTime(changeToProperTime(data[ROW][finishPos]));
+
 
 				htmlFile <<
 					"		if (hours >= " + to_string(start) + " && hours < " + to_string(finish) + ") {\n"

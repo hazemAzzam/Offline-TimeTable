@@ -18,8 +18,9 @@ protected:
 		color7 -> font color of the headers
 		color8 -> font color of the data
 		color9 -> font color of the title
+		color10 -> table body background color
 	*/
-	string first, second, third, fourth, color5, color6, color7, color8, color9;
+	string first, second, third, fourth, color5, color6, color7, color8, color9, color10;
 public:
 	void getColors();
 	void putColors();

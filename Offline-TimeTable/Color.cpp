@@ -8,7 +8,7 @@ using namespace std;
 void Color::getColors()
 {
 	ifstream colors("Colors.txt");
-	if (colors >> first >> second >> third >> fourth >> color5 >> color6 >> color7 >> color8 >> color9);
+	if (colors >> first >> second >> third >> fourth >> color5 >> color6 >> color7 >> color8 >> color9 >> color10);
 	else {
 		colors.close();
 		putColors();
@@ -21,11 +21,13 @@ void Color::putColors()
 	cout << "Background Color - Headers: "; cin >> second;
 	cout << "Background Color - Lectures in the day: "; cin >> third;
 	cout << "Background Color - Current Lectures: "; cin >> fourth;
+	cout << "Background Color - Table Body: "; cin >> color10;
 	cout << "Font Color - Selected Day: "; cin >> color5;
 	cout << "Font Color - Selected Lectures: "; cin >> color6;
 	cout << "Font Color - Headers: "; cin >> color7;
 	cout << "Font Color - data: "; cin >> color8;
 	cout << "Font Color - Title: "; cin >> color9;
+	
 	ofstream file("Colors.txt");
 	file << first << endl
 		<< second << endl
@@ -35,7 +37,8 @@ void Color::putColors()
 		<< color6 << endl
 		<< color7 << endl
 		<< color8 << endl
-		<< color9;
+		<< color9 << endl
+	<< color10;
 	file.close();
 }
 
@@ -111,6 +114,7 @@ void Color::changeColor()
 		<< color6 << endl
 		<< color7 << endl
 		<< color8 << endl
-		<< color9;
+		<< color9 << endl
+		<< color10;
 	file.close();
 }
